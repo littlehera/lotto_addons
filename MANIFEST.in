@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include lotto_addons *.css
+recursive-include lotto_addons *.csv
+recursive-include lotto_addons *.html
+recursive-include lotto_addons *.ico
+recursive-include lotto_addons *.js
+recursive-include lotto_addons *.json
+recursive-include lotto_addons *.md
+recursive-include lotto_addons *.png
+recursive-include lotto_addons *.py
+recursive-include lotto_addons *.svg
+recursive-include lotto_addons *.txt
+recursive-exclude lotto_addons *.pyc
