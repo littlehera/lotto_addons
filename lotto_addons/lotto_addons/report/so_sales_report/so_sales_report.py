@@ -36,11 +36,11 @@ def get_retailer_data(from_date, to_date, retailer):
 		so = frappe.get_doc("Sales Order", row[0])
 		so_item = frappe.get_doc("Sales Order", row[0]).items[0]
 		temp = {"date": so.transaction_date, "pos_no": so.pos_no, "retailer": so.customer, "tickets": so_item.qty,
-				"gross_sales": so.grand_total, "cancels": so.cancels, "payout": so.payout, "net_sales": so.net_sales,
+				"gross_sales": so.gross_sales, "cancels": so.cancels, "payout": so.payout, "net_sales": so.net_sales,
 				"net_due": so.net_due}
 		data.append(temp)
 		t_tickets += so_item.qty
-		t_gross += so.grand_total
+		t_gross += so.gross_sales
 		t_cancels += so.cancels
 		t_payout += so.payout
 		t_netsales += so.net_sales
@@ -62,11 +62,11 @@ def get_data(from_date, to_date):
 		so = frappe.get_doc("Sales Order", row[0])
 		so_item = frappe.get_doc("Sales Order", row[0]).items[0]
 		temp = {"date":so.transaction_date, "pos_no":so.pos_no, "retailer":so.customer, "tickets":so_item.qty,
-				"gross_sales":so.grand_total, "cancels":so.cancels, "payout":so.payout, "net_sales":so.net_sales,
+				"gross_sales":so.gross_sales, "cancels":so.cancels, "payout":so.payout, "net_sales":so.net_sales,
 				"net_due":so.net_due}
 		data.append(temp)
 		t_tickets+=so_item.qty
-		t_gross+=so.grand_total
+		t_gross+=so.gross_sales
 		t_cancels+=so.cancels
 		t_payout+=so.payout
 		t_netsales+=so.net_sales

@@ -14,5 +14,15 @@ def renumbers_submit_so():
             #frappe.get_doc("Sales Order",id)
 
 def submit_doc(doctype, id):
+    print "============SUBMIT==============="
     doc = frappe.get_doc(doctype, id)
     doc.submit()
+
+def recompute_gross():
+    sos = frappe.db.sql("""SELECT name from `tabSales Order` ORDER BY name asc""")
+    for so in sos:
+        doc = frappe.get_doc("Sales Order", so[0])
+        print doc.name
+        gross_sales = float(doc.net_sales + doc.cancels)
+        frappe.db.sql("""UPDATE `tabSales Order` set gross_sales = %s where name = %s""",(gross_sales, so[0]))
+        frappe.db.commit()

@@ -6,7 +6,7 @@ def get_data():
 	return [
 		{
 			"module_name": "Lotto Addons",
-			"color": "white",
+			"color": "#EF4836",
 			"icon": "octicon octicon-file-directory",
 			"type": "module",
 			"label": _("Lotto Addons")

@@ -7,7 +7,7 @@ app_title = "Lotto Addons"
 app_publisher = "littlehera"
 app_description = "Zambian Lotto Addons"
 app_icon = "octicon octicon-file-directory"
-app_color = "white"
+app_color = "#EF4836"
 app_email = "villanuevahera@gmail.com"
 app_license = "MIT"
 
@@ -119,4 +119,5 @@ app_license = "MIT"
 # override_whitelisted_methods = {
 # 	"frappe.desk.doctype.event.event.get_events": "lotto_addons.event.get_events"
 # }
-
+fixtures = ["Report"]
+#fixtures = ["Custom Field", "Custom Script", "Property Setter", "Print Format", "Report"]
