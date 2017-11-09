@@ -42,6 +42,7 @@ function get_so_data(frm){
 				{
 					console.log(r.message[i]);
 					var newrow = cur_frm.add_child("items");
+					newrow.draw_id = r.message[i].draw_id;
 					newrow.date = r.message[i].date;
 					newrow.tpm = r.message[i].tpm;
 					newrow.so = r.message[i].so;

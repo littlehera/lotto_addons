@@ -9,6 +9,16 @@ from datetime import date, datetime, timedelta
 import calendar, re
 
 class LottoGame(Document):
+	def before_insert(self):
+		print self.start_date
+		print self.draw_days
+		duplicates = frappe.db.sql("""SELECT name from `tabLotto Game` where start_date = %s and draw_days = %s""",(self.start_date, self.draw_days))
+		if len(duplicates) > 0:
+			frappe.throw("Game already exists for "+self.start_date + "| "+self.draw_days, "Error")
+		else:
+			frappe.msgprint("Success")
+	def get_doc_before_save(self):
+		print "eh"
 	pass
 
 @frappe.whitelist()
@@ -35,5 +45,13 @@ def get_dates(start_date, draw_days):
 
 def get_draw_no():
 	draws = frappe.db.sql("""SELECT name, draw_no from `tabLotto Game` ORDER BY name desc LIMIT 1""")
-	for draw in draws:
-		print draw[1]
+	if len(draws) == 0:
+		return 1
+	else:
+		for draw in draws:
+			return int(draw[1])+1
+
+def set_draw_dates():
+	for game in frappe.db.sql("""SELECT name from `tabLotto Game`"""):
+		game_doc = frappe.get_doc("Lotto Game", game[0])
+

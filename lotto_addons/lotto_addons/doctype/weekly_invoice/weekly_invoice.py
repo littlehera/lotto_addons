@@ -28,6 +28,10 @@ def get_weekly_sales_orders(from_date, to_date, retailer):
 		so_dict["discount"] = (doc.net_sales/1.16 * 0.07)
 		so_dict["prizes"] = doc.payout
 		so_dict["prizes_discount"] = (doc.payout * 0.02)
+
+		draw = frappe.db.sql("""SELECT parent from `tabDraw Dates` where date = %s LIMIT 1""", doc.transaction_date)
+		so_dict["draw_id"] = draw[0][0]
+
 		data.append(so_dict)
 	return data
 
