@@ -4,6 +4,11 @@
 frappe.ui.form.on('Lotto Game', {
 	refresh: function(frm) {
 
+	},
+	start_date:function(frm){
+		frm.set_value("draw_days", null);
+		cur_frm.clear_table("draw_dates");
+		frm.refresh();
 	}
 });
 

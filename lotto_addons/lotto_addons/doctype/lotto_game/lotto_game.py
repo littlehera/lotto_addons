@@ -44,11 +44,12 @@ def get_dates(start_date, draw_days):
 
 
 def get_draw_no():
-	draws = frappe.db.sql("""SELECT name, draw_no from `tabLotto Game` ORDER BY name desc LIMIT 1""")
+	draws = frappe.db.sql("""SELECT name, draw_no from `tabLotto Game` ORDER BY ABS(name) desc LIMIT 1""")
 	if len(draws) == 0:
 		return 1
 	else:
 		for draw in draws:
+			print draw[1]
 			return int(draw[1])+1
 
 def set_draw_dates():
