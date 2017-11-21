@@ -119,5 +119,5 @@ app_license = "MIT"
 # override_whitelisted_methods = {
 # 	"frappe.desk.doctype.event.event.get_events": "lotto_addons.event.get_events"
 # }
-fixtures = ["Report"]
+fixtures = ["Report", "Property Setter", "Print Format"]
 #fixtures = ["Custom Field", "Custom Script", "Property Setter", "Print Format", "Report"]

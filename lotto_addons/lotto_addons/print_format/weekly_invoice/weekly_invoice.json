@@ -1,0 +1,23 @@
+{
+ "align_labels_right": 0, 
+ "creation": "2017-11-21 03:08:13.427725", 
+ "css": "", 
+ "custom_format": 0, 
+ "disabled": 0, 
+ "doc_type": "Weekly Invoice", 
+ "docstatus": 0, 
+ "doctype": "Print Format", 
+ "font": "Default", 
+ "format_data": "[{\"fieldname\": \"print_heading_template\", \"fieldtype\": \"Custom HTML\", \"options\": \"<div>\\n<div style = \\\"width:90%;float:left\\\">\\n\\t<div style = \\\"float: left; width: '30%'\\\">\\n\\tRetailer:{{dRetaileroc.retailer}}<br>\\n\\tSales Representative : {{doc.representative}}<br>\\n\\t</div>\\n\\t<div style = \\\"float: left; width: '30%'\\\">\\n\\tVAT:{{doc.vat}}<br>\\n\\tTPIN : {{doc.tpin}}<br>\\n\\t</div>\\n</div>\\n\\t<div style=\\\"float:right; width:'10%';\\\">\\n\\t<img src = \\\"files/logo_hd.png\\\">\\n\\t</div>\\n</div>\"}, {\"fieldtype\": \"Section Break\", \"label\": \"\"}, {\"fieldtype\": \"Column Break\"}, {\"print_hide\": 0, \"fieldname\": \"retailer\", \"label\": \"Retailer Name\"}, {\"print_hide\": 0, \"fieldname\": \"representative\", \"label\": \"Sales Representative\"}, {\"print_hide\": 0, \"fieldname\": \"vat\", \"label\": \"VAT\"}, {\"print_hide\": 0, \"fieldname\": \"tpin\", \"label\": \"TPIN\"}, {\"fieldtype\": \"Column Break\"}, {\"print_hide\": 0, \"fieldname\": \"from_date\", \"label\": \"From Date\"}, {\"print_hide\": 0, \"fieldname\": \"to_date\", \"label\": \"To Date\"}, {\"fieldtype\": \"Section Break\", \"label\": \"Details\"}, {\"fieldtype\": \"Column Break\"}, {\"visible_columns\": [{\"print_hide\": 0, \"fieldname\": \"date\", \"print_width\": \"\"}, {\"print_hide\": 0, \"fieldname\": \"draw_id\", \"print_width\": \"\"}, {\"print_hide\": 0, \"fieldname\": \"tpm\", \"print_width\": \"\"}, {\"print_hide\": 0, \"fieldname\": \"sales\", \"print_width\": \"\"}, {\"print_hide\": 0, \"fieldname\": \"discount\", \"print_width\": \"\"}, {\"print_hide\": 0, \"fieldname\": \"prizes\", \"print_width\": \"\"}, {\"print_hide\": 0, \"fieldname\": \"prizes_discount\", \"print_width\": \"\"}, {\"print_hide\": 0, \"fieldname\": \"totals\", \"print_width\": \"\"}, {\"print_hide\": 0, \"fieldname\": \"so\", \"print_width\": \"\"}], \"print_hide\": 0, \"fieldname\": \"items\", \"label\": \"weekly invoice details\"}, {\"print_hide\": 0, \"fieldname\": \"net_due\", \"label\": \"Net Due\"}]", 
+ "idx": 0, 
+ "line_breaks": 0, 
+ "modified": "2017-11-21 03:57:23.006006", 
+ "modified_by": "Administrator", 
+ "module": "Lotto Addons", 
+ "name": "Weekly Invoice", 
+ "owner": "Administrator", 
+ "print_format_builder": 0, 
+ "print_format_type": "Server", 
+ "show_section_headings": 0, 
+ "standard": "Yes"
+}

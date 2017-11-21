@@ -11,9 +11,14 @@ from dateutil.relativedelta import relativedelta
 class WeeklyInvoice(Document):
 	def validate(self):
 		items = self.items
-		self.net_due = 0
+		self.net_due, self.t_sales, self.t_discounts, self.t_prizes, self.t_pdiscounts= 0,0,0,0,0
 		for item in items:
 			self.net_due += item.totals
+			self.t_sales += item.sales
+			self.t_discounts += item.discount
+			self.t_prizes += item.prizes
+			self.t_pdiscounts += item.prizes_discount
+
 	pass
 
 @frappe.whitelist()
