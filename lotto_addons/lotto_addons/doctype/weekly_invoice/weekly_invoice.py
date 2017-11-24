@@ -34,14 +34,14 @@ def get_weekly_sales_orders(from_date, to_date, retailer):
 		so_dict["date"] = doc.transaction_date
 		print "========+RETAILER=============="
 		print retailer
-		disc = frappe.get_doc("Customer", retailer).retailer_discount
+		disc = float(frappe.get_doc("Customer", retailer).retailer_discount)/100
 		#discount = retailer.discount
 		print disc
 
 		#Discount = (net sales / 1.16) x .09 or .07
 		so_dict["tpm"] = doc.pos_no
 		so_dict["sales"] = doc.net_sales
-		so_dict["discount"] = (doc.net_sales/1.16) * (disc/100)
+		so_dict["discount"] = (doc.net_sales/1.16) * (disc)
 		so_dict["sales_totals"] = (float(doc.net_sales) - (doc.net_sales/1.16 * disc))
 		so_dict["prizes"] = doc.payout
 		so_dict["prizes_discount"] = (doc.payout * 0.02)
